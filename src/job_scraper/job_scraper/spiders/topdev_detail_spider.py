@@ -34,7 +34,7 @@ class TopdevApiSpider(scrapy.Spider):
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36',
     }
 
-    def start_requests(self):
+    async def start(self):
         # Initiate the first request for each region defined in the dictionary
         for region_id in self.region_mapping.keys():
             self.logger.info(f"Starting scrape for region {region_id} ({self.region_mapping[region_id]})")
