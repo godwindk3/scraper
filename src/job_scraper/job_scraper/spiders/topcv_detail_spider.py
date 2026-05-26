@@ -35,39 +35,7 @@ class TopcvDetailSpider(scrapy.Spider):
         'AUTOTHROTTLE_MAX_DELAY': 30,
         'AUTOTHROTTLE_TARGET_CONCURRENCY': 1,
     }
-    # custom_settings = {
-    #     'ROBOTSTXT_OBEY': False,
-    #     'COOKIES_ENABLED': True,
-        
-    #     # --- TỐI ƯU CHO 32GB RAM ---
-    #     'CONCURRENT_REQUESTS': 8,             # Mở 8 tab cùng lúc. Quá an toàn cho 32GB RAM (chỉ tốn cỡ 2-3GB).
-    #     'CONCURRENT_REQUESTS_PER_DOMAIN': 8,  # Giới hạn số lượng request đồng thời vào chung 1 domain (topcv).
-        
-    #     # --- TINH CHỈNH PLAYWRIGHT ---
-    #     'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
-    #     'DOWNLOAD_HANDLERS': {
-    #         'http': 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
-    #         'https': 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
-    #     },
-    #     'PLAYWRIGHT_LAUNCH_OPTIONS': {
-    #         'headless': True,
-    #         'timeout': 30000,
-    #     },
-    #     # Tối ưu hóa Context của Playwright để dùng chung tài nguyên RAM/CPU tốt hơn
-    #     'PLAYWRIGHT_MAX_CONTEXTS': 1,         
-    #     'PLAYWRIGHT_MAX_PAGES_PER_CONTEXT': 8, 
-        
-    #     # --- ÉM NHẸM TỐC ĐỘ (TRÁNH CLOUDFLARE) ---
-    #     'DOWNLOAD_DELAY': 2,                  # Giảm thời gian chờ giữa các request xuống 2 giây (trước là 5s)
-    #     'RANDOMIZE_DOWNLOAD_DELAY': True,     # Scrapy sẽ random chờ từ 1s đến 3s để giả làm người thật
-        
-    #     'AUTOTHROTTLE_ENABLED': True,
-    #     'AUTOTHROTTLE_START_DELAY': 2,
-    #     'AUTOTHROTTLE_MAX_DELAY': 15,         # Nếu server TopCV phản hồi chậm lại, tối đa chỉ đợi 15s rồi ép chạy tiếp
-    #     'AUTOTHROTTLE_TARGET_CONCURRENCY': 8,
-    # }
-
-    # Changed from 'async def start' to standard Scrapy 'start_requests'
+  
     async def start(self):
         # Locate the JSON file containing all job URLs
         input_path = Path(__file__).resolve().parents[3] / 'topcv_urls.json'
