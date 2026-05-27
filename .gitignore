@@ -3,4 +3,3 @@ __pycache__/
 *.json
 *.jsonl
 data/
-!topcv_urls.json
