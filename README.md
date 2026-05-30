@@ -1,6 +1,6 @@
 # Job Scraper
 
-This project uses [Scrapy](https://scrapy.org/) to crawl job data from 4 websites:
+This project uses [Scrapy](https://scrapy.org/) to crawl IT job data from 4 websites:
 
 - itviec
 - topdev
