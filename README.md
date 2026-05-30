@@ -55,7 +55,7 @@ scrapy crawl itviec
 
 ---
 
-# Replace this string with your actual MongoDB Atlas connection string when load to mongodb
+## Replace this string with your actual MongoDB Atlas connection string when load to mongodb
 MONGO_URI = "mongodb+srv://<username>:<password>@cluster0.xxxx.mongodb.net/?appName=<appname>"
 
 ## More Details
