@@ -2,3 +2,4 @@
 Scrapy==2.16.0
 scrapy-impersonate==1.7.0
 playwright==1.60.0
+pymongo==4.17.0
